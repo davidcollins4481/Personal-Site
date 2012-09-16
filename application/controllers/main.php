@@ -3,7 +3,7 @@
 class main extends CI_Controller {
 
     public function index() {
-       // $this->load->view('static/index.php');
+        $this->load->view('static/home.php');
     }
 
     public function boilerplate() {

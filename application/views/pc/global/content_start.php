@@ -13,9 +13,9 @@
         <div id="site_content">
             <div class="gallery">
                 <ul class="images">
-                    <li class="show"><img width="950" height="300" src="images/1.jpg" alt="photo_one"></li>
-                    <li><img width="950" height="300" src="images/2.jpg" alt="photo_two"></li>
-                    <li><img width="950" height="300" src="images/3.jpg" alt="photo_three"></li>
+                    <li class="show"><img width="950" height="300" src="/images/1.jpg" alt="photo_one"></li>
+                    <li><img width="950" height="300" src="/images/2.jpg" alt="photo_two"></li>
+                    <li><img width="950" height="300" src="/images/3.jpg" alt="photo_three"></li>
                 </ul>
             </div>
             <div id="sidebar_container">
