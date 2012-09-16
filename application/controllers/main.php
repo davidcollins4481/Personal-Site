@@ -6,6 +6,14 @@ class main extends CI_Controller {
         $this->load->view('static/home.php');
     }
 
+    public function contact() {
+        $this->load->view('static/contact.php');
+    }
+
+    public function projects() {
+        $this->load->view('static/projects');
+    }
+
     public function boilerplate() {
         $this->load->view('static/boilerplate.php');
     }

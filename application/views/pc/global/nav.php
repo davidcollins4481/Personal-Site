@@ -1,7 +1,8 @@
 <nav>
     <ul class="sf-menu" id="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="examples.html">Examples</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/main/projects">Projects</a></li>
+        <!--
         <li><a href="page.html">A Page</a></li>
         <li class="selected"><a href="another_page.html">Another Page</a></li>
         <li><a href="#">Example Drop Down</a>
@@ -21,6 +22,7 @@
                 <li><a href="#">Drop Down Five</a></li>
             </ul>
         </li>
-        <li><a href="contact.php">Contact Us</a></li>
+        -->
+        <li><a href="/main/contact">Contact Me</a></li>
     </ul>
 </nav>
