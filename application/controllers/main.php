@@ -17,9 +17,13 @@ class main extends CI_Controller {
     public function boilerplate() {
         $this->load->view('static/boilerplate.php');
     }
-    
+
     public function gears() {
         $this->load->view('static/gears.php');
+    }
+
+    public function destroy() {
+        $this->load->view('static/destroy-the-page.php');
     }
 }
 
