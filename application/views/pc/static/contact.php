@@ -3,12 +3,6 @@
 <?php $this->load->view("global/content_start.php");?>
 
     <div class="content">
-        <div style="float: left; margin-right: 20px;">
-            <img style="width:100px" src="/images/qr.png" />
-        </div>
-
-        <h3>David Collins</h3>
-
         <div id="contact_container">
             <div class="contact_icon">
                 <span>
@@ -33,6 +27,10 @@
                     </a>
                 </span>
             </div>
+        </div>
+
+        <div style="float: left; clear:both; margin-top:20px; margin-right: 20px;">
+            <img style="width:100px" src="/images/qr.png" />
         </div>
     </div>
 

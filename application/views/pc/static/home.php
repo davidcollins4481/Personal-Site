@@ -3,7 +3,6 @@
 <?php $this->load->view("global/content_start.php");?>
 
             <div class="content">
-                <h3>Home</h3>
                 <p>This is my site. There are many like it, but this one is mine.</p>
             </div>
 

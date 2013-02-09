@@ -78,12 +78,12 @@ h5, h6 {
 
 a, a:hover { 
   outline: none;
-  text-decoration: underline;
+  text-decoration: none;
   color: #09D4FF;
 }
 
 a:hover { 
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 blockquote { 

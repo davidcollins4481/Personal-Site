@@ -1,3 +1,4 @@
 logs/*
 application/logs/*
 *.sh
+.DS_Store

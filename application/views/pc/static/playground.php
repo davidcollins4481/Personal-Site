@@ -3,7 +3,7 @@
 <?php $this->load->view("global/content_start.php");?>
 
     <div class="content">
-        <h3>Playground</h3>
+        <p>Things I tinker with for fun when I get some extra time</p>
         <a href="/main/gears">CSS gears</a>
     </div>
 
