@@ -16,5 +16,25 @@
 /* iPhone Portrait */
 @media screen and (max-width: 320px)
 {
-    #viewcart .checkout-buttons, #samples input#add-samples {font-size: .9em; padding-top: 6px; padding-bottom: 6px; white-space: normal; }
+}
+
+@font-face { 
+  font-family: Yanone Kaffeesatz; 
+    src: url('../fonts/YanoneKaffeesatz-Regular.eot'); 
+    src: local("Yanone Kaffeesatz"), url('../fonts/YanoneKaffeesatz-Regular.ttf'); 
+} 
+
+@font-face { 
+  font-family: News Cycle; 
+    src: url('../fonts/NewsCycle-Regular.eot'); 
+    src: local("News Cycle"), url('../fonts/NewsCycle-Regular.ttf'); 
+} 
+
+html { 
+  height: 100%;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
 }
