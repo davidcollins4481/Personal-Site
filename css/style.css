@@ -265,6 +265,14 @@ nav {
   padding: 15px 0;
 }
 
+.content h3 { 
+  padding: 0 15px 20px 0;
+  font: 150% 'News Cycle', arial, sans-serif;
+  text-shadow:  #FFF 1px 1px;
+  margin: 0 1px;
+  color: #444;
+}
+
 .content { 
   text-align: left;
   width: 670px;
@@ -272,7 +280,7 @@ nav {
   float: left;
   font-size: 120%;
 }
-  
+
 .content ul { 
   margin: 2px 0 22px 0px;
 }
@@ -587,4 +595,9 @@ ul#images li {
   float: left;
   width: 155px;
   height: 300px;
+}
+
+/* contact page */
+div.contact_icon {
+    float: left;
 }

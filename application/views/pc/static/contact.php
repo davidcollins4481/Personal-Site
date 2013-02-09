@@ -3,15 +3,21 @@
 <?php $this->load->view("global/content_start.php");?>
 
     <div class="content">
-        <h1>David Collins</h1>
-        <div>
-            <!--<span><img style="height:50px;" src="http://files.softicons.com/download/social-media-icons/colored-pen-web-icons-by-iconexpo.com/png/256/gmail-pen.png" /></span>-->
-            <span style="position:relative;top:-20px">Email: <a href="mailto:davidcollins4481@gmail.com?subject=Website Inquiry">davidcollins4481@gmail.com</a></span>
+        <h3>David Collins</h3>
+        <div class="contact_icon">
+            <span>
+                <a href="mailto:davidcollins4481@gmail.com?subject=Website Inquiry">
+                    <img style="height:50px;" src="/images/gmail.png" />
+                </a>
+            </span>
         </div>
 
-        <div>
-            <span><img style="height:50px;" src="/images/twitter.png" /></span>
-            <span style="position:relative;top:-20px"><a href="https://twitter.com/FranticPedantic">@FranticPedantic</a></span>
+        <div class="contact_icon">
+            <span>
+                <a href="https://twitter.com/FranticPedantic" target="_blank">
+                    <img style="height:50px;" src="/images/twitter.png" />
+                </a>
+            </span>
         </div>
     </div>
 
