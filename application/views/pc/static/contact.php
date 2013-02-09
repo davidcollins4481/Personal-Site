@@ -19,6 +19,14 @@
                 </a>
             </span>
         </div>
+
+        <div class="contact_icon">
+            <span>
+                <a href="https://github.com/davidcollins4481" target="_blank">
+                    <img style="height:50px;" src="/images/github.png" />
+                </a>
+            </span>
+        </div>
     </div>
 
 <?php $this->load->view("global/content_end.php");?>
