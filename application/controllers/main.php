@@ -10,8 +10,8 @@ class main extends CI_Controller {
         $this->load->view('static/contact.php');
     }
 
-    public function projects() {
-        $this->load->view('static/projects');
+    public function playground() {
+        $this->load->view('static/playground');
     }
 
     public function boilerplate() {

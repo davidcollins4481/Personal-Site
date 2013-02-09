@@ -1,7 +1,7 @@
 <nav>
     <ul class="sf-menu" id="nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/main/projects">Projects</a></li>
+        <li><a href="/main/playground">Playground</a></li>
         <!--
         <li><a href="page.html">A Page</a></li>
         <li class="selected"><a href="another_page.html">Another Page</a></li>
