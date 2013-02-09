@@ -137,3 +137,22 @@ ul#nav li a {
 #nav-container {
     padding: 20px 0;
 }
+
+#site_content { 
+  width: auto;
+  overflow: hidden;
+  margin: 0px auto 0 auto;
+  padding: 15px 0 15px 0;
+} 
+
+/* contact page */
+div#contact_container {
+    float: left;
+    clear: both;
+    margin-top: 20px;
+}
+
+div.contact_icon {
+    float: left;
+    padding-right: 40px
+}
