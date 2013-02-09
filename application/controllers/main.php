@@ -3,7 +3,12 @@
 class main extends CI_Controller {
 
     public function index() {
-        $this->load->view('static/home.php');
+        $agent = load_class('User_agent');
+        if ($agent->is_mobile) {
+            $this->load->view('static/mobile_home.php');
+        } else {
+            $this->load->view('static/home.php');
+        }
     }
 
     public function contact() {

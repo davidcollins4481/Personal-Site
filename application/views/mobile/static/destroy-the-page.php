@@ -1,0 +1,1 @@
+../../pc/static/destroy-the-page.php
