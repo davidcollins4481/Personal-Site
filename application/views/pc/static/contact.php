@@ -11,7 +11,7 @@
                     </a>
                 </span>
             </div>
-    
+
             <div class="contact_icon">
                 <span>
                     <a href="https://twitter.com/FranticPedantic" target="_blank">
@@ -19,7 +19,7 @@
                     </a>
                 </span>
             </div>
-    
+
             <div class="contact_icon">
                 <span>
                     <a href="https://github.com/davidcollins4481" target="_blank">
