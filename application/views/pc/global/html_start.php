@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>FranticPedantic</title>
-    <meta name="description" content="website description">
+<!--
+    <meta name="description" content="">
     <meta name="keywords" content="website keywords, website keywords">
+-->
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!-- TODO: Want to have more control over this per page -->

@@ -7,7 +7,6 @@
                     <h2>Dad. Developer.</h2>
                 </div>
             </div>
-            <?php $this->load->view("global/nav.php");?>
         </header>
     
         <div id="site_content">

@@ -133,3 +133,7 @@ ul#nav li a {
   color: #222;
   margin-right: 2px;
 }
+
+#nav-container {
+    padding: 20px 0;
+}
