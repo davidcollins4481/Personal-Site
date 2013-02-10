@@ -2,15 +2,22 @@
 <html>
 <head>
     <title>FranticPedantic</title>
-<!--
-    <meta name="description" content="">
-    <meta name="keywords" content="website keywords, website keywords">
--->
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!-- TODO: Want to have more control over this per page -->
     <link rel="stylesheet" type="text/css" href="/css/projects/gears.css">
     <link rel="stylesheet" type="text/css" href="/css/projects/destroy_the_page.css">
-    <!-- modernizr enables HTML5 elements and feature detects -->
+
+    <!-- javascript at the bottom for fast page loading -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.easing-sooper.js"></script>
+    <script type="text/javascript" src="/js/jquery.sooperfish.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/modernizr-1.5.min.js"></script>
+
+    <!-- destroy the page
+    <script type="text/javascript" src="/js/projects/dtp/ship.js"></script>
+    <script type="text/javascript" src="/js/projects/destroy_the_page.js"></script>
+    -->
+    <!-- /destroy the page -->
 </head>

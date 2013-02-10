@@ -1,6 +1,6 @@
 #ship {
     background: url('/images/galagaship.jpg') no-repeat 0 0;
-    position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
     height: 50px;
