@@ -30,6 +30,10 @@ class main extends CI_Controller {
     public function destroy() {
         $this->load->view('static/destroy-the-page.php');
     }
+
+    public function geolocation() {
+        $this->load->view('static/geolocation.php');
+    }
 }
 
 /* End of file welcome.php */

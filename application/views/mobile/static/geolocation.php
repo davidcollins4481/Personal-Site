@@ -3,8 +3,10 @@
 <?php $this->load->view("global/content_start.php");?>
 
     <div class="content">
-        <p>Things I tinker with for fun when I get some extra time</p>
-        <a href="/main/geolocation">Geolocation API fun</a>
+        <p>Let's find out where you are on the map!</p>
+        <ul>
+            <li id="postal_code" style="font-style:italic;font-weight:bold"></li>
+        </ul>
     </div>
 
 <?php $this->load->view("global/content_end.php");?>

@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="/css/projects/gears.css">
     <link rel="stylesheet" type="text/css" href="/css/projects/destroy_the_page.css">
 
-    <!-- javascript at the bottom for fast page loading -->
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/jquery.easing-sooper.js"></script>
     <script type="text/javascript" src="/js/jquery.sooperfish.js"></script>
