@@ -13,6 +13,8 @@ function Ship(args) {
         this.node.style.left  = "0px";
     }
 
+    this.angle = 0;
+
     /* CONSTANTS - currently arrow keys */
     this.FORWARD_KEY_CODE = 38;
     this.BACKWARD_KEY_CODE = 40;
@@ -40,6 +42,8 @@ function Ship(args) {
         } else if (e.keyCode == self.FIRE_KEY_CODE) {
             self.fire(e);
         }
+
+        console.log("angle:" + self.angle);
     });
 }
 
@@ -64,9 +68,9 @@ Ship.prototype.moveBackward = function(event) {
 Ship.prototype.moveLeft = function(event) {
     var self = this;
     var rotateLeft = function(node) {
-        var oldVal = node.style.webkitTransform;
-        var newMove = 'rotate(-' + self.TURN_SIZE + 'deg)';
-        node.style.webkitTransform = oldVal + newMove;
+        var oldVal = node.style.webkitTransform.replace('rotate(','').replace('deg)','') || 0;
+        self.angle  = parseInt(oldVal) + -self.TURN_SIZE;
+        node.style.webkitTransform = 'rotate(' + self.angle + 'deg)';
     };
 
     rotateLeft(this.node);
@@ -75,9 +79,10 @@ Ship.prototype.moveLeft = function(event) {
 Ship.prototype.moveRight = function(event) {
     var self = this;
     var rotateRight = function(node) {
-        var oldVal = node.style.webkitTransform;
-        var newMove = 'rotate(' + self.TURN_SIZE + 'deg)';
-        node.style.webkitTransform = oldVal + newMove;
+        // this is hideous
+        var oldVal = node.style.webkitTransform.replace('rotate(','').replace('deg)','') || 0;
+        self.angle  = parseInt(oldVal) + self.TURN_SIZE;
+        node.style.webkitTransform = 'rotate(' + self.angle + 'deg)';
     };
 
     rotateRight(this.node);
