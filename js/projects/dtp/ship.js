@@ -19,8 +19,9 @@ function Ship(args) {
     this.LEFT_KEY_CODE = 37;
     this.RIGHT_KEY_CODE = 39;
 
-     this.MOVE_SIZE = 10;
-
+    this.FIRE_KEY_CODE = 32;
+    this.MOVE_SIZE = 10;
+    this.TURN_SIZE = 10;
     if (args.shipImage) {
         this.shipImage = args.shipImage;
     }
@@ -30,17 +31,20 @@ function Ship(args) {
     window.addEventListener("keydown", function(e) {
         if (e.keyCode == self.FORWARD_KEY_CODE) {
             self.moveForward(e);
-        } else if (self.BACKWARD_KEY_CODE) {
+        } else if (e.keyCode == self.BACKWARD_KEY_CODE) {
             self.moveBackward(e);
-        } else if (self.LEFT_KEY_CODE) {
-            
-        } else if (self.RIGHT_KEY_CODE) {
-            
+        } else if (e.keyCode == self.LEFT_KEY_CODE) {
+            self.moveLeft(e);
+        } else if (e.keyCode == self.RIGHT_KEY_CODE) {
+            self.moveRight(e);
+        } else if (e.keyCode == self.FIRE_KEY_CODE) {
+            self.fire(e);
         }
     });
 }
 
-Ship.prototype.fire = function() {
+Ship.prototype.fire = function(e) {
+    e.preventDefault();
     console.log('pew pew pew');
 }
 
@@ -55,4 +59,26 @@ Ship.prototype.moveBackward = function(event) {
     var topPosition = this.node.style.top;
     var newPos = parseInt(topPosition) + this.MOVE_SIZE;
     this.node.style.top = newPos + "px";
+}
+
+Ship.prototype.moveLeft = function(event) {
+    var self = this;
+    var rotateLeft = function(node) {
+        var oldVal = node.style.webkitTransform;
+        var newMove = 'rotate(-' + self.TURN_SIZE + 'deg)';
+        node.style.webkitTransform = oldVal + newMove;
+    };
+
+    rotateLeft(this.node);
+}
+
+Ship.prototype.moveRight = function(event) {
+    var self = this;
+    var rotateRight = function(node) {
+        var oldVal = node.style.webkitTransform;
+        var newMove = 'rotate(' + self.TURN_SIZE + 'deg)';
+        node.style.webkitTransform = oldVal + newMove;
+    };
+
+    rotateRight(this.node);
 }

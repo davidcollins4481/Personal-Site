@@ -15,9 +15,9 @@
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/modernizr-1.5.min.js"></script>
 
-    <!-- destroy the page
+
     <script type="text/javascript" src="/js/projects/dtp/ship.js"></script>
     <script type="text/javascript" src="/js/projects/destroy_the_page.js"></script>
-    -->
+
     <!-- /destroy the page -->
 </head>

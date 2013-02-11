@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    var ship = new Ship({
-        node: $('#ship')[0]
-    })
-
-    ship.fire();
+    if ($('#ship').length) {
+        var ship = new Ship({
+            node: $('#ship')[0]
+        });
+    }
 
 });
