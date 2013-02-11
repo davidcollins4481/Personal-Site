@@ -43,7 +43,7 @@ function Ship(args) {
             self.fire(e);
         }
 
-        console.log("angle:" + self.angle);
+        //console.log("angle:" + self.angle);
     });
 }
 
@@ -57,6 +57,13 @@ Ship.prototype.moveForward = function(event) {
     var topPosition = this.node.style.top;
     var newPos = parseInt(topPosition) - this.MOVE_SIZE;
     this.node.style.top = newPos + "px";
+
+    if (this.angle != 0) {
+        var oldLeft = parseInt(this.node.style.left);
+        var newLeft = (oldLeft + (360 - this.angle) / this.MOVE_SIZE ) + "px";
+        console.log(newLeft);
+        this.node.style.left = newLeft;
+    }
 }
 
 Ship.prototype.moveBackward = function(event) {
