@@ -20,10 +20,10 @@ function Ship(args) {
     this.BACKWARD_KEY_CODE = 40;
     this.LEFT_KEY_CODE = 37;
     this.RIGHT_KEY_CODE = 39;
-
     this.FIRE_KEY_CODE = 32;
     this.MOVE_SIZE = 10;
     this.TURN_SIZE = 10;
+
     if (args.shipImage) {
         this.shipImage = args.shipImage;
     }
@@ -43,7 +43,7 @@ function Ship(args) {
             self.fire(e);
         }
 
-        //console.log("angle:" + self.angle);
+        console.log("angle:" + self.angle);
     });
 }
 
@@ -54,14 +54,20 @@ Ship.prototype.fire = function(e) {
 
 
 Ship.prototype.moveForward = function(event) {
-    var topPosition = this.node.style.top;
-    var newPos = parseInt(topPosition) - this.MOVE_SIZE;
-    this.node.style.top = newPos + "px";
+
+    if (this.angle != 90 && this.angle != -90) {
+        var topPosition = this.node.style.top;
+        var newPos = parseInt(topPosition) - this.MOVE_SIZE;
+        this.node.style.top = newPos + "px";
+    }
 
     if (this.angle != 0) {
+        // slope formula from given angle?
+        // Math.tan(90 - angle)
+    
         var oldLeft = parseInt(this.node.style.left);
         var newLeft = (oldLeft + (360 - this.angle) / this.MOVE_SIZE ) + "px";
-        console.log(newLeft);
+        console.log("new left: " + newLeft);
         this.node.style.left = newLeft;
     }
 }
@@ -76,7 +82,8 @@ Ship.prototype.moveLeft = function(event) {
     var self = this;
     var rotateLeft = function(node) {
         var oldVal = node.style.webkitTransform.replace('rotate(','').replace('deg)','') || 0;
-        self.angle  = parseInt(oldVal) + -self.TURN_SIZE;
+        var newAngle = parseInt(oldVal) + -self.TURN_SIZE;
+        self.angle  = newAngle <= -360 ? 0 : newAngle;
         node.style.webkitTransform = 'rotate(' + self.angle + 'deg)';
     };
 
@@ -88,7 +95,8 @@ Ship.prototype.moveRight = function(event) {
     var rotateRight = function(node) {
         // this is hideous
         var oldVal = node.style.webkitTransform.replace('rotate(','').replace('deg)','') || 0;
-        self.angle  = parseInt(oldVal) + self.TURN_SIZE;
+        var newAngle = parseInt(oldVal) + self.TURN_SIZE;
+        self.angle  = newAngle >= 360 ? 0 : newAngle;
         node.style.webkitTransform = 'rotate(' + self.angle + 'deg)';
     };
 
