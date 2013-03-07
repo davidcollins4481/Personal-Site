@@ -2,11 +2,11 @@ $(document).ready(function() {
 
     var getLocationCallback = function(position) {
 
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
+        var lat = sprintf("%.6f", position.coords.latitude);
+        var lon = sprintf("%.6f", position.coords.longitude);
 
         var coords = lat + ',' + lon;
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + coords + '&sensor=true&key=AIzaSyDEYIntNxsVCA_6a_P4jhqZGTksBOFPlkE';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + coords + '&sensor=true';
 
         /* Send the data using post and put the results in a div */
         $.ajax({
