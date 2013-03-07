@@ -6,7 +6,7 @@ $(document).ready(function() {
         var lon = position.coords.longitude;
 
         var coords = lat + ',' + lon;
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + coords + '&sensor=true';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + coords + '&sensor=true&key=AIzaSyDEYIntNxsVCA_6a_P4jhqZGTksBOFPlkE';
 
         /* Send the data using post and put the results in a div */
         $.ajax({
