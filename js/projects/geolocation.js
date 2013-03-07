@@ -11,7 +11,7 @@ $(document).ready(function() {
         /* Send the data using post and put the results in a div */
         $.ajax({
             url: url,
-            type: "post",
+            type: "get",
             success: function(response) {
                 var r = response.results;
                 var street_address_obj = r[0];
