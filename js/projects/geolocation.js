@@ -6,12 +6,18 @@ $(document).ready(function() {
         var lon = sprintf("%.6f", position.coords.longitude);
 
         var coords = lat + ',' + lon;
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + coords + '&sensor=true';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json';
+
+        var params = {
+            latlng: coords,
+            sensor: true
+        };
 
         /* Send the data using post and put the results in a div */
         $.ajax({
             url: url,
-            type: "get",
+            type: "GET",
+            data: params,
             success: function(response) {
                 var r = response.results;
                 var street_address_obj = r[0];
