@@ -38,6 +38,13 @@ class main extends CI_Controller {
     public function mustache() {
         $this->load->view('static/mustache.php');
     }
+
+    /* example from Sparks package-ish manager */
+    public function sparks() {
+        $this->load->spark('example-spark/1.0.0');      # We always specify the full path from the spark folder
+        $this->example_spark->printHello();             # echo's "Hello from the example spark!"
+    }
+
 }
 
 /* End of file welcome.php */
