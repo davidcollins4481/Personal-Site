@@ -1,5 +1,9 @@
 <?php $this->load->view("global/html_start.php");?>
 <?php $this->load->view("global/head_start.php");?>
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="/js/projects/geolocation.js"></script>
+
 <?php $this->load->view("global/head_end.php");?>
 <?php $this->load->view("global/body_start.php");?>
 <?php $this->load->view("global/content_start.php");?>

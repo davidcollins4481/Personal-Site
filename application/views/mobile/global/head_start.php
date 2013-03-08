@@ -8,8 +8,3 @@
     <link rel="stylesheet" type="text/css" href="/css/mobile/style.css" media="all">
     <script type="text/javascript" src="/js/modernizr-1.5.min.js"></script>
     <script type="text/javascript" src="/js/sprintf-0.6.js"></script>
-
-    <!-- projects -->
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="/js/projects/geolocation.js"></script>
-
