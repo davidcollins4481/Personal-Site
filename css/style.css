@@ -600,7 +600,6 @@ ul#images li {
 /* contact page */
 div#contact_container {
     float: left;
-    clear: both;
     margin-top: 20px;
 }
 
