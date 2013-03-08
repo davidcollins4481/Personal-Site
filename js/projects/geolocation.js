@@ -3,33 +3,22 @@ $(document).ready(function() {
     var getLocationCallback = function(position) {
 
         var lat = sprintf("%.6f", position.coords.latitude);
-        var lon = sprintf("%.6f", position.coords.longitude);
-
-        var coords = lat + ',' + lon;
-        var url = 'http://maps.googleapis.com/maps/api/geocode/json';
-
-        var params = {
-            latlng: coords,
-            sensor: true
-        };
-
-        /* Send the data using post and put the results in a div */
-        $.ajax({
-            url: url,
-            type: "GET",
-            data: params,
-            dataType: "jsonp",
-            success: function(response) {
-                var r = response.results;
-                var street_address_obj = r[0];
-                var postal_code = r[1];
-                $('#postal_code').html(postal_code.formatted_address);
-            },
-            error:function(){
-                alert("failure");
-                $("#result").html('there is error while submit');
+        var lng = sprintf("%.6f", position.coords.longitude);
+        var latlng = new google.maps.LatLng(lat, lng);
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'latLng': latlng}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    var street_address = results[0].formatted_address;
+                    var postal_code = results[1];
+                    $('#postal_code').html(postal_code.formatted_address);
+                } else {
+                    alert("no results found");
+                }
+            } else {
+                alert("Geocoder failed :(");
             }
-        }); 
+        });
     };
 
     navigator.geolocation.getCurrentPosition(getLocationCallback);

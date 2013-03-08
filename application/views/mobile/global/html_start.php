@@ -12,5 +12,6 @@
     <script type="text/javascript" src="/js/sprintf-0.6.js"></script>
 
     <!-- projects -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="/js/projects/geolocation.js"></script>
 </head>
