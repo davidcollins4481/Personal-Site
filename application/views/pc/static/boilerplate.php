@@ -1,4 +1,6 @@
 <?php $this->load->view("global/html_start.php");?>
+<?php $this->load->view("global/head_start.php");?>
+<?php $this->load->view("global/head_end.php");?>
 <?php $this->load->view("global/body_start.php");?>
 <?php $this->load->view("global/content_start.php");?>
 
