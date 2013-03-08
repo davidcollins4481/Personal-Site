@@ -25,6 +25,8 @@ $(document).ready(function() {
             alert("Error: Access is denied!");
         } else if( err.code == 2) {
             alert("Error: Position is unavailable!");
+        } else {
+            alert("Unknown error");
         }
     };
 
