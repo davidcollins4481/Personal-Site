@@ -18,7 +18,7 @@ $(document).ready(function() {
             url: url,
             type: "GET",
             data: params,
-            dataType: "jsonp"
+            dataType: "jsonp",
             success: function(response) {
                 var r = response.results;
                 var street_address_obj = r[0];
