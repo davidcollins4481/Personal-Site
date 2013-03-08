@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     var getLocationCallback = function(position) {
-
+        alert('ping');
         var lat = sprintf("%.6f", position.coords.latitude);
         var lng = sprintf("%.6f", position.coords.longitude);
         var latlng = new google.maps.LatLng(lat, lng);
