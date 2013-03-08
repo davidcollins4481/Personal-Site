@@ -1,5 +1,8 @@
 <?php $this->load->view("global/html_start.php");?>
 <?php $this->load->view("global/head_start.php");?>
+
+<link rel="stylesheet" type="text/css" href="/css/projects/gears.css">
+
 <?php $this->load->view("global/head_end.php");?>
 <?php $this->load->view("global/content_start.php");?>
 

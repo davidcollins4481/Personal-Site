@@ -1,5 +1,10 @@
 <?php $this->load->view("global/html_start.php");?>
 <?php $this->load->view("global/head_start.php");?>
+
+<script type="text/javascript" src="/js/projects/dtp/ship.js"></script>
+<script type="text/javascript" src="/js/projects/destroy_the_page.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/projects/destroy_the_page.css">
+
 <?php $this->load->view("global/head_end.php");?>
 <?php $this->load->view("global/content_start.php");?>
 
