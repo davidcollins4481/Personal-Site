@@ -35,7 +35,7 @@ class main extends CI_Controller {
         $this->load->view('static/geolocation.php');
     }
 
-    public function mustacheFun() {
+    public function mustache() {
         $this->load->view('static/mustache.php');
     }
 }
