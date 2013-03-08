@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     var getLocationCallback = function(position) {
-        alert('ping');
         var lat = sprintf("%.6f", position.coords.latitude);
         var lng = sprintf("%.6f", position.coords.longitude);
         var latlng = new google.maps.LatLng(lat, lng);
@@ -21,6 +20,14 @@ $(document).ready(function() {
         });
     };
 
-    navigator.geolocation.getCurrentPosition(getLocationCallback);
+    var errorHandler = function(err) {
+        if(err.code == 1) {
+            alert("Error: Access is denied!");
+        } else if( err.code == 2) {
+            alert("Error: Position is unavailable!");
+        }
+    };
+
+    navigator.geolocation.getCurrentPosition(getLocationCallback, errorHandler);
 
 });
