@@ -74,7 +74,7 @@
         <h1>Mustache Fun</h1>
         <p>
             <a href="http://mustache.github.com/">Mustache</a> is a cool templating library that I've been meaning to check out. Let's do something
-            simple like get a list of all of Ohio's US House of Representative members from the NY Time API.
+            simple like get a list of all of Ohio's US House of Representative members from the New York Times' Congress API.
         </p>
         <div id="attach_point"></div>
     </div>
