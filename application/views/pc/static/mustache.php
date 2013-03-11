@@ -3,7 +3,9 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-        var members = <?php echo $house_members ?>;
+        var obj = <?php echo $house_members ?>;
+        var members = obj.results[0].members;
+        console.log(members);
     });
 
 </script>
