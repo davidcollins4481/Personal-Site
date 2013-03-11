@@ -36,7 +36,19 @@ class main extends CI_Controller {
     }
 
     public function mustache() {
-        $this->load->view('static/mustache.php');
+        #$homepage = file_get_contents('http://www.example.com/');
+        if (!function_exists('curl_init')){
+            die('Sorry cURL is not installed!');
+        }
+
+        $api_key = '431d5cc18be42a10d8dd643a0508efea:12:66347810';
+        $url = 'http://api.nytimes.com/svc/politics/v3/us/legislative/congress/113/house/members.json?&state=oh&api-key=' . $api_key;
+        $ch =  curl_init($url);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        $data['house_members'] = $output;
+        log_message('debug', "response? ", $output);
+        $this->load->view('static/mustache.php', $data);
     }
 
     /* example from Sparks package-ish manager */

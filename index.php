@@ -27,6 +27,8 @@
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
+// http://stackoverflow.com/questions/4882790/how-to-set-date-timezone-for-code-igniter-to-work-with-php5-3
+ini_set('date.timezone', 'America/New_York');
 
 if (defined('ENVIRONMENT'))
 {
