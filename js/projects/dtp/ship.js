@@ -55,7 +55,16 @@ Ship.prototype.fire = function(e) {
     e.preventDefault();
     var soundEffect = new Audio("/audio/pew.wav")
     soundEffect.play()
-    console.log('pew pew pew');
+    var currentX = this.node.offsetLeft;
+    var currentY = this.node.offsetTop;
+
+    var t = new Torpedo({
+        x: currentX,
+        y: currentY
+    }).launch();
+
+    if (this.debug)
+        console.log(currentX + ', ' + currentY);
 }
 
 Ship.prototype._getXYChange = function() {
@@ -71,7 +80,7 @@ Ship.prototype._getXYChange = function() {
 }
 
 Ship.prototype.moveForward = function(event) {
-    var coords = this._getXY();
+    var coords = this._getXYChange();
     var x = parseInt(this.node.style.left);
     var y = parseInt(this.node.style.top); 
 
@@ -87,7 +96,7 @@ Ship.prototype.moveForward = function(event) {
 
 /* FIXME - not working at all */
 Ship.prototype.moveBackward = function(event) {
-    var coords = this._getXY();
+    var coords = this._getXYChange();
     var x = parseInt(this.node.style.left);
     var y = parseInt(this.node.style.top); 
 

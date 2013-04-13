@@ -6,3 +6,10 @@
     height: 50px;
     width: 50px;
 }
+
+.torpedo {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+}
