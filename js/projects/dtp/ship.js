@@ -21,8 +21,9 @@ function Ship(args) {
     this.LEFT_KEY_CODE = 37;
     this.RIGHT_KEY_CODE = 39;
     this.FIRE_KEY_CODE = 32;
-    this.MOVE_SIZE = 2;
+    this.MOVE_SIZE = 10;
     this.TURN_SIZE = 10;
+
     this.debug = true;
 
     if (args.shipImage) {
@@ -52,38 +53,52 @@ function Ship(args) {
 
 Ship.prototype.fire = function(e) {
     e.preventDefault();
+    var soundEffect = new Audio("/audio/pew.wav")
+    soundEffect.play()
     console.log('pew pew pew');
 }
 
-Ship.prototype._getXY = function() {
-    var x = parseInt(this.node.style.left);
-    var y = parseInt(this.node.style.top);       
+Ship.prototype._getXYChange = function() {
     var radians = (Math.PI / 180) * (this.angle - 90);
 
-    x += this.MOVE_SIZE * Math.cos(radians);
-    y += this.MOVE_SIZE * Math.sin(radians);
+    //x -= this.MOVE_SIZE * Math.cos(radians);
+    //y -= this.MOVE_SIZE * Math.sin(radians);
 
-    return { x: x, y: y };
+    return { 
+        x: this.MOVE_SIZE * Math.cos(radians),
+        y: this.MOVE_SIZE * Math.sin(radians) 
+    };
 }
 
 Ship.prototype.moveForward = function(event) {
-
     var coords = this._getXY();
-    this.node.style.top = Math.ceil(coords.y) + "px";
-    this.node.style.left = Math.ceil(coords.x) + "px";
+    var x = parseInt(this.node.style.left);
+    var y = parseInt(this.node.style.top); 
+
+    x += coords.x;
+    y += coords.y;
+
+    this.node.style.left = Math.ceil(x) + "px";
+    this.node.style.top = Math.ceil(y) + "px";
 
     if (this.debug) 
-        console.log(coords.x + ',' + coords.y);
+        console.log(x + ',' + y);
 }
 
 /* FIXME - not working at all */
 Ship.prototype.moveBackward = function(event) {
     var coords = this._getXY();
-    this.node.style.top = Math.ceil(-coords.y) + "px";
-    this.node.style.left = Math.ceil(-coords.x) + "px";
+    var x = parseInt(this.node.style.left);
+    var y = parseInt(this.node.style.top); 
+
+    x -= coords.x;
+    y -= coords.y;
+
+    this.node.style.left = Math.ceil(x) + "px";
+    this.node.style.top = Math.ceil(y) + "px";
 
     if (this.debug) 
-        console.log(coords.x + ',' + coords.y);
+        console.log(x + ',' + y);
 }
 
 Ship.prototype.moveLeft = function(event) {
