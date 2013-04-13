@@ -21,8 +21,9 @@ function Ship(args) {
     this.LEFT_KEY_CODE = 37;
     this.RIGHT_KEY_CODE = 39;
     this.FIRE_KEY_CODE = 32;
-    this.MOVE_SIZE = 10;
+    this.MOVE_SIZE = 2;
     this.TURN_SIZE = 10;
+    this.debug = true;
 
     if (args.shipImage) {
         this.shipImage = args.shipImage;
@@ -31,6 +32,7 @@ function Ship(args) {
     // attach event listeners
     var self = this;
     window.addEventListener("keydown", function(e) {
+        e.preventDefault();
         if (e.keyCode == self.FORWARD_KEY_CODE) {
             self.moveForward(e);
         } else if (e.keyCode == self.BACKWARD_KEY_CODE) {
@@ -43,7 +45,8 @@ function Ship(args) {
             self.fire(e);
         }
 
-        console.log("angle:" + self.angle);
+        if (this.debug)
+            console.log("angle:" + self.angle);
     });
 }
 
@@ -52,30 +55,35 @@ Ship.prototype.fire = function(e) {
     console.log('pew pew pew');
 }
 
+Ship.prototype._getXY = function() {
+    var x = parseInt(this.node.style.left);
+    var y = parseInt(this.node.style.top);       
+    var radians = (Math.PI / 180) * (this.angle - 90);
+
+    x += this.MOVE_SIZE * Math.cos(radians);
+    y += this.MOVE_SIZE * Math.sin(radians);
+
+    return { x: x, y: y };
+}
 
 Ship.prototype.moveForward = function(event) {
 
-    if (this.angle != 90 && this.angle != -90) {
-        var topPosition = this.node.style.top;
-        var newPos = parseInt(topPosition) - this.MOVE_SIZE;
-        this.node.style.top = newPos + "px";
-    }
+    var coords = this._getXY();
+    this.node.style.top = Math.ceil(coords.y) + "px";
+    this.node.style.left = Math.ceil(coords.x) + "px";
 
-    if (this.angle != 0) {
-        // slope formula from given angle?
-        // Math.tan(90 - angle)
-    
-        var oldLeft = parseInt(this.node.style.left);
-        var newLeft = (oldLeft + (360 - this.angle) / this.MOVE_SIZE ) + "px";
-        console.log("new left: " + newLeft);
-        this.node.style.left = newLeft;
-    }
+    if (this.debug) 
+        console.log(coords.x + ',' + coords.y);
 }
 
+/* FIXME - not working at all */
 Ship.prototype.moveBackward = function(event) {
-    var topPosition = this.node.style.top;
-    var newPos = parseInt(topPosition) + this.MOVE_SIZE;
-    this.node.style.top = newPos + "px";
+    var coords = this._getXY();
+    this.node.style.top = Math.ceil(-coords.y) + "px";
+    this.node.style.left = Math.ceil(-coords.x) + "px";
+
+    if (this.debug) 
+        console.log(coords.x + ',' + coords.y);
 }
 
 Ship.prototype.moveLeft = function(event) {
