@@ -24,6 +24,8 @@ function Ship(args) {
     this.MOVE_SIZE = 10;
     this.TURN_SIZE = 10;
 
+    this.soundFx = false;
+
     this.debug = true;
 
     if (args.shipImage) {
@@ -53,25 +55,41 @@ function Ship(args) {
 
 Ship.prototype.fire = function(e) {
     e.preventDefault();
-    var soundEffect = new Audio("/audio/pew.wav")
-    soundEffect.play()
+    if (this.soundFx) {
+        var soundEffect = new Audio("/audio/pew.wav")
+        soundEffect.play()
+    }
+
     var currentX = this.node.offsetLeft;
     var currentY = this.node.offsetTop;
 
-    var t = new Torpedo({
-        x: currentX,
-        y: currentY
-    }).launch();
+    // starting point is found using parametric equation of a circle
+    // x = cx + r * cos(a)
+    // y = cy + r * sin(a)
+    //var radians = (Math.PI / 180) * (this.angle - 90);    
+    var originX = currentX;
+    var originY = currentY;
+    var radius = 25;
+    var x = originX + radius * Math.cos(this.angle);
+    var y = originY + radius * Math.sin(this.angle);
 
-    if (this.debug)
-        console.log(currentX + ', ' + currentY);
+    if (this.debug) {
+        console.log("###########");
+        //console.log("Origin coords: " + "(" + originX + "," + originY + ")");
+        console.log("New coords: " + "(" + x + "," + y + ")");
+        console.log("Angle: " + this.angle);
+        console.log("###########");
+    }
+
+    var t = new Torpedo({
+        x: x,
+        y: y,
+        angle: this.angle
+    }).launch();
 }
 
 Ship.prototype._getXYChange = function() {
     var radians = (Math.PI / 180) * (this.angle - 90);
-
-    //x -= this.MOVE_SIZE * Math.cos(radians);
-    //y -= this.MOVE_SIZE * Math.sin(radians);
 
     return { 
         x: this.MOVE_SIZE * Math.cos(radians),
@@ -94,7 +112,6 @@ Ship.prototype.moveForward = function(event) {
         console.log(x + ',' + y);
 }
 
-/* FIXME - not working at all */
 Ship.prototype.moveBackward = function(event) {
     var coords = this._getXYChange();
     var x = parseInt(this.node.style.left);

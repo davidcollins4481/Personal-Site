@@ -14,7 +14,7 @@ function Torpedo(args) {
 }
 
 Torpedo.prototype.launch = function(e) {
-    console.log("launching torpedo");
+    //console.log("launching torpedo: " + "(" + this.x + "," + this.y + ")");
     
 }
 
