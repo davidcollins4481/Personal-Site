@@ -34,7 +34,7 @@
         }
 </style>
 
-<script src="http://github.com/janl/mustache.js/raw/master/mustache.js" type="text/javascript"></script>
+<script src="/js/mustache.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
