@@ -21,12 +21,15 @@ function Ship(args) {
     this.LEFT_KEY_CODE = 37;
     this.RIGHT_KEY_CODE = 39;
     this.FIRE_KEY_CODE = 32;
+    this.DETONATE_KEY_CODE = 68; //'d'
     this.MOVE_SIZE = 10;
     this.TURN_SIZE = 10;
 
     this.soundFx = false;
 
     this.debug = true;
+
+    this.firedMunitions = [];
 
     if (args.shipImage) {
         this.shipImage = args.shipImage;
@@ -46,6 +49,8 @@ function Ship(args) {
             self.moveRight(e);
         } else if (e.keyCode == self.FIRE_KEY_CODE) {
             self.fire(e);
+        } else if (e.keyCode == self.DETONATE_KEY_CODE) {
+            self.detonateLaunched();
         }
 
         if (this.debug)
@@ -62,20 +67,16 @@ Ship.prototype.fire = function(e) {
 
     var currentX = this.node.offsetLeft;
     var currentY = this.node.offsetTop;
+    // http://stackoverflow.com/questions/839899/how-do-i-calculate-a-point-on-a-circles-circumference
 
-    // starting point is found using parametric equation of a circle
-    // x = cx + r * cos(a)
-    // y = cy + r * sin(a)
-    //var radians = (Math.PI / 180) * (this.angle - 90);    
     var originX = currentX;
     var originY = currentY;
     var radius = 25;
-    var x = originX + radius * Math.cos(this.angle);
-    var y = originY + radius * Math.sin(this.angle);
+    var x = radius * Math.cos(this.angle * Math.PI / 180) + originX;
+    var y = radius * Math.sin(this.angle * Math.PI / 180) + originY;
 
     if (this.debug) {
         console.log("###########");
-        //console.log("Origin coords: " + "(" + originX + "," + originY + ")");
         console.log("New coords: " + "(" + x + "," + y + ")");
         console.log("Angle: " + this.angle);
         console.log("###########");
@@ -85,7 +86,21 @@ Ship.prototype.fire = function(e) {
         x: x,
         y: y,
         angle: this.angle
-    }).launch();
+    });
+
+    this.firedMunitions.push(t);
+    t.launch();
+}
+
+Ship.prototype.detonateLaunched = function() {
+    if (this.debug)
+        console.log(this.firedMunitions);
+
+    this.firedMunitions.forEach(function(m) {
+        m.detonate();
+    });
+
+    this.firedMunitions = [];
 }
 
 Ship.prototype._getXYChange = function() {

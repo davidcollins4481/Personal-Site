@@ -6,7 +6,7 @@ function Torpedo(args) {
     this._torpedo = document.createElement('div');
     this._torpedo.id = new Date().getTime();
     this._torpedo.className = "torpedo";
-    
+    // eventually the placement on the page will happen when 'launched'
     this.container.appendChild(this._torpedo);
 
     this._torpedo.style.top = this.y + "px";
@@ -16,5 +16,9 @@ function Torpedo(args) {
 Torpedo.prototype.launch = function(e) {
     //console.log("launching torpedo: " + "(" + this.x + "," + this.y + ")");
     
+}
+
+Torpedo.prototype.detonate = function() {
+    this.container.removeChild(this._torpedo);
 }
 
