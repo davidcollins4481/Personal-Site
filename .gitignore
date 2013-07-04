@@ -2,3 +2,4 @@ logs/*
 application/logs/*
 *.sh
 .DS_Store
+.sass-cache

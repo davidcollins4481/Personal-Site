@@ -1,13 +1,15 @@
+$blue:#09D4FF;
+
 @font-face { 
   font-family: Yanone Kaffeesatz; 
-    src: url('/fonts/YanoneKaffeesatz-Regular.eot'); 
-    src: local("Yanone Kaffeesatz"), url('/fonts/YanoneKaffeesatz-Regular.ttf'); 
+  src: url('/fonts/YanoneKaffeesatz-Regular.eot'); 
+  src: local("Yanone Kaffeesatz"), url('/fonts/YanoneKaffeesatz-Regular.ttf'); 
 } 
 
 @font-face { 
   font-family: News Cycle; 
-    src: url('/fonts/NewsCycle-Regular.eot'); 
-    src: local("News Cycle"), url('/fonts/NewsCycle-Regular.ttf'); 
+  src: url('/fonts/NewsCycle-Regular.eot'); 
+  src: local("News Cycle"), url('/fonts/NewsCycle-Regular.ttf'); 
 } 
 
 html { 
@@ -79,7 +81,7 @@ h5, h6 {
 a, a:hover { 
   outline: none;
   text-decoration: none;
-  color: #09D4FF;
+  color: $blue;
 }
 
 a:hover { 
@@ -171,7 +173,7 @@ header {
 }
 
 #logo_text h1 a .logo_colour { 
-  color: #09D4FF;
+  color: $blue;
 }
 
 #logo_text a:hover .logo_colour { 
@@ -565,7 +567,7 @@ ul#nav li a {
 }
 
 ul#nav li a:hover, ul#nav li a:focus, ul#nav li.selected a, ul#nav li.selected a:hover, ul#nav li.selected a:focus { 
-  color: #09D4FF;
+  color: $blue;
   text-shadow: none;
 }
 
@@ -574,7 +576,7 @@ ul#nav ul li a {
 }
 
 ul#nav ul li a:hover { 
-  color: #09D4FF;
+  color: $blue;
   margin-right: 2px;
 }
 
