@@ -13,10 +13,6 @@
                         with others. I'm just getting this site set up so I imagine very people even know it exists. Probably a good thing right now I guess :)
                     </p>
                 </div>
-                <div style="width:300px;float:right">
-                    <a class="twitter-timeline" href="https://twitter.com/franticpedantic" data-widget-id="300724551111802880">Tweets by @franticpedantic</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                </div>
             </div>
 
 <?php $this->load->view("global/content_end.php");?>
