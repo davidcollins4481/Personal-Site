@@ -74,7 +74,8 @@
         <h1>Mustache Fun</h1>
         <p>
             <a href="http://mustache.github.com/">Mustache</a> is a templating library that can be used with several different languages. 
-            Here I get a list of all members of the US House of Representatives from The New York Times Congress API.
+            Here I get a list of all members of the US House of Representatives from The New York Times Congress API and render each of them with
+            a Mustache template.
         </p>
         <div id="attach_point"></div>
     </div>
