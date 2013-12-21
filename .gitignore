@@ -3,3 +3,4 @@ application/logs/*
 *.sh
 .DS_Store
 .sass-cache
+venv/*
