@@ -2,7 +2,7 @@
     RewriteEngine On
     RewriteBase /
 
-    RewriteRule (.*)$ app/$1 [R=301,L]
+    RewriteRule (.*)$ app/$1
 
 </IfModule>
 
