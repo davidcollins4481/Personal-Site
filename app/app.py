@@ -10,7 +10,7 @@ def home():
 
 @app.route("/test")
 def test():
-    return "new page"
+    return "new page test"
 
 if __name__ == "__main__":
     app.run(debug=True)
