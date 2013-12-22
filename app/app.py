@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-
+import os
 
 app = Flask(__name__)
 
@@ -10,7 +10,10 @@ def home():
 
 @app.route("/test")
 def test():
-    return "new page test"
+    return "new page sadsd"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    if os.environ.get('DEBUG'):
+        app.debug = True
+
+    app.run()
