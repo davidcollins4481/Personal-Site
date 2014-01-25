@@ -2,6 +2,7 @@
     RewriteEngine On
     RewriteBase /
 
+    RewriteCond %{HTTP_HOST} ^franticpedantic.com
     RewriteRule (.*)$ app/$1
 
 </IfModule>
