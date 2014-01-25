@@ -11,5 +11,6 @@ def home():
 if __name__ == "__main__":
     if os.environ.get('DEBUG'):
         app.debug = True
-
-    app.run()
+        app.run('127.0.0.1',5001)
+    else:
+        app.run()
