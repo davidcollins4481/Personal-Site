@@ -1,5 +1,5 @@
 body {
-  background-color: #f39c12; }
+  background-color: #27ae60; }
   body h1, body h2, body h3, body h4 {
     color: #393a3b; }
   body h1 {
@@ -7,12 +7,19 @@ body {
   body p {
     color: #eeeeee; }
 
-nav ul li {
-  list-style: none; }
-
-p.page_content {
+@media (min-width: 992px) {
+  div#left {
+    margin-top: 13%; } }
+div#left #nav-container nav ul {
+  padding-left: 0px; }
+  div#left #nav-container nav ul li {
+    list-style: none;
+    color: #eeeeee;
+    font-weight: bold;
+    font-size: 14px; }
+div#left p.page_content {
   font-size: 24px;
   font-weight: 500px; }
-
-.page-header {
-  border-bottom: none; }
+div#left .page-header {
+  border-bottom: none;
+  margin-top: 0; }

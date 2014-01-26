@@ -1,6 +1,6 @@
-$background_color: #f39c12;
+$background_color: #27ae60;
 $header_color: #393a3b;
-$paragraph_color: #eee;
+$light_text_color: #eee;
 
 // global element styles
 body {
@@ -14,19 +14,45 @@ body {
     }
 
     p {
-        color: $paragraph_color;
+        color: $light_text_color;
     }
 }
 
-nav ul li {
-    list-style: none;
+div#left {
+//    float: left;
+    @media (min-width:992px) {
+        margin-top: 13%;
+    }
+
+    #nav-container {
+        div.logo {
+            //margin: 40px 0 20px;
+        }
+
+        nav ul {
+            padding-left: 0px;
+
+            li {
+                list-style: none;
+                color: $light_text_color;
+                font-weight: bold;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    p.page_content {
+        font-size: 24px;
+        font-weight: 500px;
+    }
+
+    .page-header {
+        border-bottom: none;
+        margin-top: 0;
+    }
 }
 
-p.page_content {
-    font-size: 24px;
-    font-weight: 500px;
-}
-
-.page-header {
-    border-bottom: none;
+div#right {
+//    float: left;
 }

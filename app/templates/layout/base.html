@@ -24,25 +24,32 @@
     <body>
         <!-- Wrap all page content here -->
         <div id="wrap">
-            <div class="col-md-2">
-                <p class="navbar-header">Dave Collins</p>
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>Contact</li>
-                        <li>Other</li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- Begin page content -->
-            <div class="col-md-6">
-                <div class="page-header">
-                    <h1>{% block header %}{% endblock %}</h1>
+            <div id="left">
+                <div id="nav-container" class="col-md-2">
+                    <div class="logo"></div>
+                    <nav>
+                        <ul>
+                            <li>Home</li>
+                            <li>Contact</li>
+                            <li>Other</li>
+                        </ul>
+                    </nav>
                 </div>
-                {% block content %}{% endblock %}
+                <!-- Begin page content -->
+                <div class="col-md-6">
+                    <div class="page-header">
+                        <h1>{% block header %}{% endblock %}</h1>
+                    </div>
+                    {% block content %}{% endblock %}
+                </div>
             </div>
-
-            <div class="col-md-2"></div>
+            <div id="right">
+                <div class="col-md-2">
+                    <div class="">
+                        <p>there is going to be a bunch of geeky-looking stuff over here soon.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Bootstrap core JavaScript
