@@ -1,0 +1,18 @@
+body {
+  background-color: #f39c12; }
+  body h1, body h2, body h3, body h4 {
+    color: #393a3b; }
+  body h1 {
+    font-size: 50px; }
+  body p {
+    color: #eeeeee; }
+
+nav ul li {
+  list-style: none; }
+
+p.page_content {
+  font-size: 24px;
+  font-weight: 500px; }
+
+.page-header {
+  border-bottom: none; }

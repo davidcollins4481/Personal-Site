@@ -1,0 +1,32 @@
+$background_color: #f39c12;
+$header_color: #393a3b;
+$paragraph_color: #eee;
+
+// global element styles
+body {
+    background-color: $background_color;
+    h1,h2,h3,h4 {
+        color: $header_color;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        color: $paragraph_color;
+    }
+}
+
+nav ul li {
+    list-style: none;
+}
+
+p.page_content {
+    font-size: 24px;
+    font-weight: 500px;
+}
+
+.page-header {
+    border-bottom: none;
+}
