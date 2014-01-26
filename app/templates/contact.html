@@ -1,0 +1,30 @@
+{% extends "layout/base.html" %}
+
+{% block header %}Contact{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div id="contact_container">
+            <div class="contact_icon">
+                <span>
+                    <a href="mailto:davidcollins4481@gmail.com?subject=Website Inquiry">
+                        <img style="height:50px;" src="/static/img/gmail.png" />
+                    </a>
+                </span>
+            </div>
+
+            <div class="contact_icon">
+                <span>
+                    <a href="https://github.com/davidcollins4481" target="_blank">
+                        <img style="height:50px;" src="/static/img/github.png" />
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div style="float: left; clear:both; margin-top:20px; margin-right: 20px;">
+            <img style="width:100px" src="/static/img/qr.png" />
+        </div>
+    </div>
+
+{% endblock %}
