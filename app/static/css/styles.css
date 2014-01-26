@@ -10,10 +10,21 @@ body {
 @media (min-width: 992px) {
   div#left {
     margin-top: 13%; } }
-div#left #nav-container nav ul {
+div#left #nav-container.navbar-default {
+  background-color: #27ae60;
+  border-color: transparent; }
+  div#left #nav-container.navbar-default .navbar-toggle {
+    background-color: transparent;
+    border-color: transparent; }
+    div#left #nav-container.navbar-default .navbar-toggle .icon-bar {
+      background-color: #2ecc71; }
+  div#left #nav-container.navbar-default .navbar-collapse {
+    border-color: transparent; }
+div#left #nav-container ul {
   padding-left: 0px; }
-  div#left #nav-container nav ul li {
+  div#left #nav-container ul li {
     list-style: none;
+    float: none;
     color: #eeeeee;
     font-weight: bold;
     font-size: 14px; }

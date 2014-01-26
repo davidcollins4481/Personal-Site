@@ -1,4 +1,5 @@
 $background_color: #27ae60;
+$background_compliment_color: #2ecc71;
 $header_color: #393a3b;
 $light_text_color: #eee;
 
@@ -19,21 +20,39 @@ body {
 }
 
 div#left {
-//    float: left;
     @media (min-width:992px) {
         margin-top: 13%;
     }
 
     #nav-container {
+        // some bootstrap style overrides
+
+        &.navbar-default {
+            background-color: $background_color;
+            border-color: transparent;
+            .navbar-toggle {
+                background-color: transparent;//$background_compliment_color;
+                border-color: transparent;
+                .icon-bar {
+                    background-color: $background_compliment_color;
+                }
+            }
+
+            .navbar-collapse {
+                border-color: transparent;
+            }
+        }
+
         div.logo {
             //margin: 40px 0 20px;
         }
 
-        nav ul {
+        ul {
             padding-left: 0px;
 
             li {
                 list-style: none;
+                float: none;
                 color: $light_text_color;
                 font-weight: bold;
                 font-size: 14px;
