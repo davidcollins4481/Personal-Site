@@ -12,6 +12,12 @@ body {
 
     h1 {
         font-size: 50px;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 25px;
+        color: #cccccc;
     }
 
     p {
@@ -36,10 +42,17 @@ div#left {
                 .icon-bar {
                     background-color: $background_compliment_color;
                 }
+
+                z-index: 100;
             }
 
             .navbar-collapse {
                 border-color: transparent;
+                ul.navbar-nav a {
+                    color: inherit;
+                    margin: inherit;
+                    padding: inherit;
+                }
             }
         }
 

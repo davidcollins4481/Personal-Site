@@ -3,7 +3,11 @@ body {
   body h1, body h2, body h3, body h4 {
     color: #393a3b; }
   body h1 {
-    font-size: 50px; }
+    font-size: 50px;
+    font-weight: bold; }
+  body h2 {
+    font-size: 25px;
+    color: #cccccc; }
   body p {
     color: #eeeeee; }
 
@@ -15,11 +19,16 @@ div#left #nav-container.navbar-default {
   border-color: transparent; }
   div#left #nav-container.navbar-default .navbar-toggle {
     background-color: transparent;
-    border-color: transparent; }
+    border-color: transparent;
+    z-index: 100; }
     div#left #nav-container.navbar-default .navbar-toggle .icon-bar {
       background-color: #2ecc71; }
   div#left #nav-container.navbar-default .navbar-collapse {
     border-color: transparent; }
+    div#left #nav-container.navbar-default .navbar-collapse ul.navbar-nav a {
+      color: inherit;
+      margin: inherit;
+      padding: inherit; }
 div#left #nav-container ul {
   padding-left: 0px; }
   div#left #nav-container ul li {

@@ -16,6 +16,10 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route("/local-hospitals-medicare")
+def localHospitals():
+    return render_template('local_hospitals.html')
+
 if __name__ == "__main__":
     if os.environ.get('DEBUG'):
         app.debug = True
