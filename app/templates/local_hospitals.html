@@ -3,10 +3,11 @@
 {% block head %}
 
 {{ super() }}
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 {% endblock %}
 
-{% block header %}What local hospitals charge Medicare{% endblock %}
+{% block header %}How much do local hospitals charge Medicare for procedures?{% endblock %}
 
 {% block content %}
 
@@ -14,5 +15,9 @@
             <p class="page_content">
             </p>
         </div>
+
+        <script type="text/javascript">
+            var data = {{ data|safe }}
+        </script>
 
 {% endblock %}
